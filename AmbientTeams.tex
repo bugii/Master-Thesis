@@ -3,7 +3,7 @@
 \thesisType{Master Thesis}
 \date{\today}
 \title{AmbientTeams}
-\subtitle{An approach for remote teams to increase team awareness and foster spontaneous communication}
+\subtitle{A social approach to increase awareness in remote teams}
 \author{Dario Bugmann}
 \home{Aarau} % Geburtsort
 \country{Switzerland}
@@ -17,6 +17,12 @@
 
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{babel}
+\usepackage{csquotes}
+\usepackage[bibencoding=auto]{biblatex}
+\addbibresource{thesis.bib}
+
 
 \begin{document}
 \maketitle
@@ -24,6 +30,7 @@
 \frontmatter
 
 \begin{acknowledgements}
+
 \end{acknowledgements}
 
 \begin{abstract}
@@ -38,34 +45,19 @@
 \lstlistoflistings
 
 \mainmatter
-\include{chapters/introduction}
-\include{chapters/related_work}
-\include{chapters/approach}
+\include{chapters/introduction.tex}
+\include{chapters/related_work.tex}
+\include{chapters/approach.tex}
+\include{chapters/methodology.tex}
+\include{chapters/results_and_discussion.tex}
+\include{chapters/conclusion.tex}
 
-%
-%\subsubsection{Subsubsection}
-%\fig[.5\textwidth]{seal_blue}{Our logo}{logo}
 
-%\subsection{Subsection}
-%
-%\paragraph{Paragraph.} Always with a point.
-
-%\begin{lstlisting}[caption=An example code snippet]
-%/**
-% * Javadoc comment
-% */
-%public class Foo {
-%	// line comment
-%	public void bar(int number) {
-%		if (number < 0) {
-%			return; /* block comment */
-%		}
-%	}
-%}
-%\end{lstlisting}
 
 \backmatter
-\bibliographystyle{alpha}
-\bibliography{thesis}
+% \bibliographystyle{apalike}
+% \bibliography{thesis}
+\printbibliography
+
 
 \end{document}
