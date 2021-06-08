@@ -3,7 +3,7 @@
 \thesisType{Master Thesis}
 \date{\today}
 \title{AmbientTeams}
-\subtitle{A social approach to increase awareness in remote teams}
+\subtitle{An approach to stay socially connected in remote teams}
 \author{Dario Bugmann}
 \home{Aarau} % Geburtsort
 \country{Switzerland}
@@ -15,12 +15,15 @@
 \begindate{15.2.2021}
 \enddate{22.7.2021}
 
+\usepackage{subcaption}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage{cleveref}
 \usepackage{enumitem}
 \usepackage{babel}
 \usepackage{csquotes}
-\usepackage[bibencoding=auto]{biblatex}
+\usepackage[toc,page]{appendix}
+\usepackage[style=alphabetic]{biblatex}
 \addbibresource{thesis.bib}
 
 
@@ -52,12 +55,13 @@
 \include{chapters/results_and_discussion.tex}
 \include{chapters/conclusion.tex}
 
+\begin{appendices}
+    \include{chapters/additional_documents.tex}
+    \include{chapters/interview_transcriptions.tex}
+\end{appendices}
 
 
 \backmatter
-% \bibliographystyle{apalike}
-% \bibliography{thesis}
 \printbibliography
-
 
 \end{document}
