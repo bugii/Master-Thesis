@@ -1,9 +1,11 @@
 \chapter{Approach}
 \label{chapter:approach}
 
+
+
+\chapter{Key Concepts}
 Our approach aims to help software developers in remote teams who might be facing challenges with workplace isolation, team awareness, informal communication within their team, and well-being. We aim to tackle these issues by allowing knowledge workers to easily learn about the availability, moods and emotions, and other states of their core team members. The key underlying concepts of our approach listed and explained in the following.
 
-\section{Key Concepts}
 \medskip\noindent\textbf{Ambient always-on-top, people-centered team view} \\
 At the core of our approach sits the desicion to create a tool that is ambient in nature and does not require significant, additional effort in order to be useful. Having a limited amount of information on an ambient display is critial for both not being interruptive and costly to use \autocite{dabbish2004controlling}. With the help of the ambient display, the goal is to create a sense of presence within the team, even when working from different locations. By constantly showing the most important team members the goal is to minimize the feeling of being left and to foster a sense of belonging.
 
@@ -24,7 +26,7 @@ For scenarios where the content you want to share isn't intended for a single pe
 \medskip\noindent\textbf{Minimizing interruptions} \\
 When developing an ambient always-on top visualization, minimizing interruptions and distractions is one of the most important design principles. Specifically, this means a very targeted use of notifications and the ability to not be contacted and hide potential distractions if desired.
 
-\section{Prototype}
+\chapter{Prototype}
 The above outlined key concepts were then developed into the key features of our research prototype, \textit{AmbientTeams}. Before stepping in to the core features employed in AmbientTeams and aligning them to the above mentioned key concepts, a brief introduction into the more technical aspects and a general overview of the application is given.
 
 AmbientTeams is a cross-platform desktop application based on Electron\footnote{\url{https://www.electronjs.org/}}. To facilitate the implementation of the interactive user interface, VueJS\footnote{\url{https://vuejs.org/}} was used. To maintain JavaScript as a common language for the front-end and back-end, NodeJS\footnote{\url{https://nodejs.org/}} is used on the server side. The server provides both a REST API for basic CRUD functionality for users and teams, as well as a websocket endpoint, since much of the data required for AmbientTeams comes from the server in real time.
@@ -64,7 +66,7 @@ AmbientTeams consists of two main windows; an overview window and the so-called 
 \medskip\noindent\textbf{1:1 interactions} \\
 \medskip\noindent\textbf{Minimizing interruptions} \\
 
-\section{Preliminary Evaluation}
+\chapter{Preliminary Evaluation}
 To evaluate the above mentioned research questions, a small pilot study was conducted Optimising and improving our approach with the help of feedback from a small team consisting of knowledge workers is the main goal of this master thesis. Further, by collecting additional data hope to get valuable first insights into the following areas:
 
 \begin{enumerate}
@@ -92,7 +94,7 @@ To find participants, a recruitement flyer (see .) The study was conducted with 
     \item An active internet connection
 \end{enumerate}
 
-\subsection{Procedure}
+\section{Procedure}
 \begin{enumerate}
     \item Initial meeting: Installation, registration, team creation, give each team member a participant ID (see \autoref{subsection:initial_meeting})
     \item Pre-study questionnaire (see \autoref{subsection:questionnaires})
@@ -101,24 +103,24 @@ To find participants, a recruitement flyer (see .) The study was conducted with 
     \item  Post-study questionnaire (see \autoref{subsection:questionnaires})
 \end{enumerate}
 
-\subsection{Initial meeting}
+\section{Initial meeting}
 \label{subsection:initial_meeting}
 Installation
 
-\subsection{Pre- and post-study Questionnaires}
+\section{Pre- and post-study Questionnaires}
 \label{subsection:questionnaires}
 The pre and post study questionnaires are used to asses the feeling of workplace isolation before and after the evaluation period. The questions are taken from ....
 
-\subsection{Evaluation Phase}
+\section{Evaluation Phase}
 \label{subsection:evaluation}
 How long? \\
 During the study notes from notion
 
-\subsection{Interview}
+\section{Interview}
 \label{subsection:interview}
 Interview questions and their relevance for the research questions
 
-\subsection{Data Collection}
+\section{Data Collection}
 \label{subsection:data_collection}
 \autoref{table:data_collection} shows an overview of all data collected and for which research question they are relevant.
 
