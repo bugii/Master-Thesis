@@ -1,4 +1,5 @@
 \chapter{Prototype}
+\label{chapter:prototype}
 The above outlined key concepts were then developed into the key features of our research prototype, \textit{AmbientTeams}. Before stepping into the core features employed in AmbientTeams and aligning them to the above-mentioned key concepts, a brief introduction into the more technical aspects and a general overview of the application are given.
 
 AmbientTeams is a cross-platform desktop application based on Electron\footnote{\url{https://www.electronjs.org/}}. To facilitate the implementation of the interactive user interface, VueJS\footnote{\url{https://vuejs.org/}} was used. To maintain JavaScript as a common language for the front-end and back-end, NodeJS\footnote{\url{https://nodejs.org/}} is used on the server-side. The server provides both a REST API for basic CRUD functionality for users and teams and a WebSocket endpoint since much of the data required for AmbientTeams comes from the server in real-time.
