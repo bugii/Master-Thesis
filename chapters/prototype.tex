@@ -1,4 +1,4 @@
-\chapter{Prototype}
+\chapter{Research Prototype}
 \label{chapter:prototype}
 The above outlined key concepts were then developed into the key features of our research prototype, \textit{AmbientTeams}. Before stepping into the core features employed in AmbientTeams and aligning them to the above-mentioned key concepts (see \autoref{chapter:approach}), a brief introduction into the more technical aspects and a general overview of the application are given.
 
@@ -14,7 +14,7 @@ The team overview window is responsible for maintaining a connection to the serv
 At the core of the approach sit the avatars of the users. While we could have opted for traditional profile pictures that allow users to upload an actual photograph, we decided to use the abstract form due to privacy reasons, allowing relatively simple mood manipulation on such avatars. Also, using an avatar library gives the user interface a more clean, uniform look, which is why
 we make use of \url{https://getavataaars.com} to create and manipulate avatars.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=.8\linewidth]{./images/AT_overview.png}
     \caption{Team overview window }
@@ -24,7 +24,7 @@ we make use of \url{https://getavataaars.com} to create and manipulate avatars.
 \subsection{Ambient, glanceable Window}
 The ambient window always sits on top of other windows, making it prone to interruptions and distractions. To keep the ambient overlay as ambient and minimal as possible, we employed a transparent window. Further, certain functionality is only visible when the user is hovering over this window. When hovering over the ambient window, the user can select the team they want to show and sees the names of the individual team members, as shown in \autoref{fig:at_hover}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
@@ -41,7 +41,7 @@ The ambient window always sits on top of other windows, making it prone to inter
     \caption{Ambient window}
 \end{figure}
 
-\section{Availibility Status}
+\section{Availability Status}
 AmbientTeams does not want to be a source of interruptions which is why there is "Focused" availability state (see \autoref{fig:call}) that exists in addition to the three others ("Available", "Offline", and "Happy to Interact"). Users in this focused state cannot be called. Further, they don't see any direct messages or incoming nudges until they leave the focused state. In addition, focused users cannot directly interact with other team members, avoiding potential self-distraction.
 
 \section{Sharing}
@@ -49,7 +49,7 @@ The user can open the sharing window from both the team overview and the ambient
 
 As a reminder for the user to share his moods and/or additional context with the team members, the sharing window is also automatically scheduled to appear on the lower right corner of the user's primary monitor to minimize the distraction potential. All in all, the window has the same functionality but includes two additional buttons to postpone the prompt for either 5 minutes or 1 hour (see \autoref{fig:sharing_auto}). The scheduled sharing window is shown at three predefined times throughout the day, namely at 9:00, 13:00, and 16:00 local time.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
@@ -73,7 +73,7 @@ Since the goal of AmbientTeams is to foster informal communication, it has no ch
 \section{Breakroom}
 As stated before, our goal was to make the creation of ever-running break rooms as effortless as possible. \autoref{fig:breakroom_initiator} shows the state of the ambient windows when the user clicked on the coffee icon. Having clicked on this coffee icon, the other members of the team see an indication that there is an ongoing break room (see \autoref{fig:breakroom_indicator}). However, to not unnecessarily set up a break room and potentially interrupt the initiating user, the break room is only created once another user clicks on the coffee icon.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
@@ -93,7 +93,7 @@ As stated before, our goal was to make the creation of ever-running break rooms 
 
 Once at least two team members are interested in a break room, a break room is actually created, and the two are redirected to the break room view (see \autoref{fig:breakroom}). At any point, other team members can join and leave the breakroom, and it stays active as long as at least one team member is part of it. We want to avoid users forgetting the time and staying too long in the break room. For this purpose, whenever a user enters a break room, a 15-minute timer is started. When this timer reaches its end, the user automatically leaves the break room.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=.8\linewidth]{./images/breakroom.png}
     \caption{Breakroom, pictures are artificially created with \url{https://generated.photos/}}
@@ -104,7 +104,7 @@ Once at least two team members are interested in a break room, a break room is a
 \section{1:1 Interactions}
 In addition to the broadcasting functionality of moods and status messages, there also exists the possibility to interact with a single team member directly. An overlay appears when hovering over individual team members, offering three different interaction possibilities, namely 1) direct messaging, 2) nudging, and 3) direct calling (see \autoref{fig:interactions}).
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=.4\linewidth]{./images/interactions.png}
     \caption{1:1 interaction overlay }
@@ -113,7 +113,7 @@ In addition to the broadcasting functionality of moods and status messages, ther
 
 Direct messaging is very similar to sharing status messages but without mood sharing and team selection options. Upon a click on the messaging icon, the messaging window (\autoref{fig:messaging_window}) is shown at the user's current mouse position to minimize the distance required to interact with the window's contents. As in the status sharing window, there is a character limit of 140 characters.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=.4\linewidth]{./images/messaging_window.png}
     \caption{Messaging window }
@@ -122,7 +122,7 @@ Direct messaging is very similar to sharing status messages but without mood sha
 
 In \autoref{fig:interaction_results}, the result of a successful interaction for each of the three possibilities is visualized. Direct messages differ from status messages in the messaging icon located left to the message itself. Nuding makes use of a hand icon pointing towards the team member in question. In a video call, the video stream overlays the team member's avatar, and the availability status of both participants is automatically set to "Focused". The users can hover over their avatar should they wish to mute themselves or stop their video stream. To end an ongoing call, one has to hover over the relevant team member and click on the hanging up icon.
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \begin{subfigure}{.3\textwidth}
         \centering

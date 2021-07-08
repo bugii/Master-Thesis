@@ -3,7 +3,7 @@
 \thesisType{Master Thesis}
 \date{\today}
 \title{AmbientTeams}
-\subtitle{An approach to stay socially connected in remote teams}
+\subtitle{Staying socially connected in remote knowledge working teams}
 \author{Dario Bugmann}
 \home{Aarau} % Geburtsort
 \country{Switzerland}
@@ -20,8 +20,9 @@
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{enumitem}
-\usepackage{babel}
+\usepackage[english]{babel}
 \usepackage{csquotes}
+\renewcommand{\mkbegdispquote}[2]{\itshape}
 \usepackage[toc,page]{appendix}
 \usepackage[style=alphabetic]{biblatex}
 \addbibresource{thesis.bib}
@@ -55,13 +56,12 @@
 \include{chapters/approach}
 \include{chapters/prototype}
 \include{chapters/preliminary_evaluation}
-\include{chapters/data}
 \include{chapters/results_and_discussion}
+\include{chapters/future_directions}
 \include{chapters/conclusion}
 
 \begin{appendices}
     \include{chapters/additional_documents}
-    \include{chapters/interview_transcriptions}
 \end{appendices}
 
 
