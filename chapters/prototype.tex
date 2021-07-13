@@ -5,26 +5,38 @@ The above outlined key concepts were then developed into the key features of our
 \section{Architecture}
 AmbientTeams is a cross-platform desktop application based on Electron\footnote{\url{https://www.electronjs.org/}}. To facilitate the implementation of the interactive user interface in AmbientTeams, VueJS\footnote{\url{https://vuejs.org/}} is used as the JavaScript framework for the front-end. To maintain JavaScript as a common language for the front-end and back-end, NodeJS\footnote{\url{https://nodejs.org/}} is used on the server-side. The server provides both a REST API for basic CRUD functionality for users and teams and a WebSocket endpoint since much of the data required for AmbientTeams comes from the server in real-time.
 
+\section{Teams and \enquote{Favorites}}
+There are two types of teams in AmbientTeams; regular teams are stored on the server and require a unique identifier to join, similar to a straightforward invite-based approach often seen in practice. For scenarios where a user is part of multiple such teams, team members from different teams can be linked to a \enquote{favorites} team. These favorite teams only exist on the local machines of the users. In general, there is no visual difference between the two types within AmbientTeams, except that 1) there is no always-on break room for Favorite Teams, and 2) team members of a Favorite Team combine all status and direct messages when a Favorite Team member is part of multiple regular teams. This is different from regular teams, where status messages and direct messages are limited to that one team.
+
+\section{Avatars}
+At the core of our approach are the avatar representations of the users. While we could have opted for traditional profile pictures that allow users to upload an actual photograph, we decided to use the abstract form due to privacy reasons, allowing relatively simple mood manipulation on such avatars. Also, using an avatar library gives the user interface a more clean, uniform look, which is why we make use of getavataaars\footnote{\url{https://getavataaars.com}} to create and manipulate avatars. Users are asked to create their own avatar during the sign-up process and have the possibility to change the appearance later on. To represent the currently selected mood of each user, AmbientTeams automatically adjusts the eyes, eyebrows, and mouth types supported by the getavataaars' Application Programming Interface (API) to best possibly represent the selected emoticon.
+
 \section{Windows}
-On the front-end, AmbientTeams comes with two main windows; the team overview and the ambient window.
+AmbientTeams consists of two main windows; the team overview and the ambient window.
 
 \subsection{Team Overview Window}
-The team overview window is responsible for maintaining a connection to the server, authenticating, login functionality, settings. Additionally, once users have authenticated inside the team overview window, they are redirected to the team overview view where all teams and team members are visible (see \autoref{fig:at_overview}). There are two types of teams in AmbientTeams; regular teams are stored on the server and require a unique identifier to join, similar to a straightforward invite-based approach often seen in practice. For scenarios where a user is part of multiple such teams, team members from different teams can be linked to a \enquote{favorites} team. These favorite teams only exist on the local machines of the users. By clicking on the edit icon next to the team name, the user can select team members from each team that will then be displayed on the other main window, the ambient window. This is demonstrated in \autoref{fig:at_overview}, where the user is selecting the team members to be displayed on the ambient window.
+The team overview window is responsible for maintaining a connection to the server, authenticating, login functionality, settings. Additionally, once users have authenticated inside the team overview window, they are redirected to the team overview view where all teams and team members are visible (see \autoref{fig:at_overview}). By clicking on the edit icon next to the team name, the user can select team members from each team that will then be displayed on the other main window, the ambient window. This is demonstrated in \autoref{fig:at_overview}, where the user is selecting the team members to be displayed on the ambient window. In summary, apart from authentication purposes and initial application setup, the team overview window is primarily intended for people who are part of multiple teams and want to get a quick overview of all the different teams they belong to.
 
-At the core of the approach sit the avatars of the users. While we could have opted for traditional profile pictures that allow users to upload an actual photograph, we decided to use the abstract form due to privacy reasons, allowing relatively simple mood manipulation on such avatars. Also, using an avatar library gives the user interface a more clean, uniform look, which is why
-we make use of \url{https://getavataaars.com} to create and manipulate avatars.
-
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \includegraphics[width=.8\linewidth]{./images/AT_overview.png}
     \caption{Team overview window }
     \label{fig:at_overview}
 \end{figure}
 
-\subsection{Ambient, glanceable Window}
-The ambient window always sits on top of other windows, making it prone to interruptions and distractions. To keep the ambient overlay as ambient and minimal as possible, we employed a transparent window. Further, certain functionality is only visible when the user is hovering over this window. When hovering over the ambient window, the user can select the team they want to show and sees the names of the individual team members, as shown in \autoref{fig:at_hover}.
+\subsection{Ambient, Glanceable Window}
+The Ambient window is always on top of other windows (see \autoref{fig:at_ambient_on_top}), which on the one hand, makes it easy to stay informed about moods and other statuses of your team members, but on the other hand, can also cause interruptions and distractions. We used a transparent borderless window to keep the ambient overlay as ambient and unobtrusive as possible. However, if the window is still distracting, it can be easily minimized or closed altogether using the menu that can be accessed by clicking the minimize icon (see \autoref{fig:at_hover}). Opening the team overview window can be achieved by clicking on the three dots in the menu, which will display a small drop-down menu with the option to open the team overview window. Also, in this menu, the ambient window can be enlarged or reduced to fit different screen resolutions and personal preferences.
 
-\begin{figure}[h!]
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=.8\linewidth]{./images/AT_ambient_on_top.png}
+    \caption{Always-on-top ambient window while working on another task }
+    \label{fig:at_ambient_on_top}
+\end{figure}
+
+Further, certain functionality is only visible when the user is hovering over this window. When hovering over the ambient window, the user can select the team they want to show and sees the names of the individual team members, as shown in \autoref{fig:at_hover}.
+
+\begin{figure}[h]
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
@@ -42,14 +54,14 @@ The ambient window always sits on top of other windows, making it prone to inter
 \end{figure}
 
 \section{Availability Status}
-AmbientTeams does not want to be a source of interruptions which is why there is \enquote{Focused} availability state (see \autoref{fig:call}) that exists in addition to the three others (\enquote{Available}, \enquote{Offline}, and \enquote{Happy to Interact}). Users in this focused state cannot be called. Further, they don't see any direct messages or incoming nudges until they leave the focused state. In addition, focused users cannot directly interact with other team members, avoiding potential self-distraction.
+AmbientTeams wants to keep the number of interruptions to a minimum, which is why there is the \enquote{Focused} availability state (see \autoref{fig:call}) that exists in addition to the three others (\enquote{Available}, \enquote{Offline}, and \enquote{Happy to Interact}). Users in this focused state cannot be called. Further, they don't see any direct messages or incoming nudges until they leave the focused state. In addition, focused users cannot directly interact with other team members, avoiding potential self-distraction. The availability state \enquote{Happy to Interact} was included to address the lack of serendipity in remote work. When selected by at least two team members, an automatic matchmaker runs every minute and randomly pairs two people, who are then routed to a video call.
 
-\section{Sharing}
-The user can open the sharing window from both the team overview and the ambient window, as well as the system tray menu. All of those actions will open the sharing window as shown in \autoref{fig:sharing_manual}, where on the left, a preview of the current avatar and the selection of predefined moods are listed. There are nine available moods, visualized using popular emoticons. The first four emoticons are more optimistic, the fifth is a neutral face, and the last four are emoticons representing rather negative emotional states. The selection of the emoticons started with the basic emotions surprise, fear, disgust, anger, happiness, or sadness. This list was expanded over time to, in our opinion, suit the work environment better by adding a neutral and tired emoticon, as well as two more positive emotions (loving hearts and grinning) to make the selection more balanced. Due to limitations with the avatar API, we were not able to render the emotion fear well enough, which led us to remove it. On the right, a textbox for providing additional context is shown. The contents of this textbox are, if available, pre-populated with the current status message for the currently selected team. Additionally, the text is highlighted when the window is created, facilitating overwriting the current status without using the mouse to select the text manually. Status messages' length is limited to 140 characters, motivated by the initial limit of Twitter (TODO: cite). Below the textbox, the user can find a button to share the status message with either all teams or a single team.
+\section{Sharing Moods and Status Messages}
+The user can open the sharing window from both the team overview and the ambient window, and the system tray menu. All of those actions will open the sharing window as shown in \autoref{fig:sharing_manual}, where on the left, a preview of the current avatar and the selection of available moods are listed. There are nine available moods, visualized using popular emoticons available through OpenMoji\footnote{\url{https://openmoji.org}}, an open-source emoji project. The first four of the available emoticons are more optimistic, the fifth is a neutral face, and the last four are emoticons representing rather negative emotional states. The selection of the emoticons started with six basic emotions: surprise, fear, disgust, anger, happiness, and sadness \autocite{an2017two}. This list was expanded over time to better suit the work environment (TODO: Find references to support some of the moods/emotions that we added) by adding a neutral and tired emoticon and two more positive emotions (loving hearts and grinning) to make the selection more balanced. Due to limitations with the avatar API, we could not render \enquote{fear} well enough, which led us to remove it. On the right, the user can enter additional context in a simple, standard textbox. The contents of this textbox are, if available, pre-populated with the current status message for the currently selected team. Additionally, the text is highlighted when the window is created, facilitating overwriting the current status without using the mouse to select the text manually. Status messages' length is limited to 140 characters, motivated by the initial limit of Twitter \autocite{dullemond2013fixing}. Below the textbox, the user can find a button to share the status message with either all teams or a single team.
 
-As a reminder for the user to share his moods and/or additional context with the team members, the sharing window is also automatically scheduled to appear on the lower right corner of the user's primary monitor to minimize the distraction potential. All in all, the window has the same functionality but includes two additional buttons to postpone the prompt for either 5 minutes or 1 hour (see \autoref{fig:sharing_auto}). The scheduled sharing window is shown at three predefined times throughout the day, namely at 9:00, 13:00, and 16:00 local time.
+As a reminder for the user to share their moods and potential additional context with team members, the sharing window also appears automatically at pre-defined times. The location we chose for this pop-up is the lower right corner of the user's primary monitor to minimize the potential for distraction. Overall, the window has the same functionality but includes two additional buttons to defer the prompt for either 5 minutes or 1 hour (see \autoref{fig:sharing_auto}). The scheduled sharing window is displayed at three pre-defined times throughout the day, namely at 9:00, 13:00, and 16:00 local time.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
@@ -66,14 +78,14 @@ As a reminder for the user to share his moods and/or additional context with the
     \caption{Sharing window}
 \end{figure}
 
-To ensure that information shared within AmbientTeams is up-to-date, a couple of measures have been taken. The first is a purely visual effect which leads to the avatars fading out when no recent activities took place \autoref{fig:at_no_hover}. Such activities include status and mood sharing, direct messages, and nudging. In addition to potentially motivating users to interact with such faded-out team members, this automatic fading out facilitates spotting colleagues' updates quickly. Another measurement we took to avoid outdated content to be shown to the users, status messages and moods are hidden at midnight.
+To ensure that the information shared within AmbientTeams is up-to-date, a few measures have been taken. The first is purely visual: avatars are increasingly hidden the longer there has been no current activity. Such activities include status and mood sharing, direct messaging, and nudging. This automatic hiding should motivate users to interact with such hidden team members and easily spot updates from colleagues. Another measure we have taken to avoid showing users outdated content is automatically resetting status updates and moods at midnight.
 
-Since the goal of AmbientTeams is to foster informal communication, it has no chat history or any other history built into the application. With this transience, we aim to promote less formal communication and hope to avoid the AmbientTeams becomes just another tool to keep track of for work.
+Since the goal of AmbientTeams is to encourage informal communication, there is no chat history or other history built into the application. With this impermanence, we want to promote more casual and less formal communication and hope to avoid AmbientTeams becoming just another tool to keep track of work.
 
-\section{Breakroom}
-As stated before, our goal was to make the creation of ever-running break rooms as effortless as possible. \autoref{fig:breakroom_initiator} shows the state of the ambient windows when the user clicked on the coffee icon. Having clicked on this coffee icon, the other members of the team see an indication that there is an ongoing break room (see \autoref{fig:breakroom_indicator}). However, to not unnecessarily set up a break room and potentially interrupt the initiating user, the break room is only created once another user clicks on the coffee icon.
+\section{Ever-Running Breakroom}
+As mentioned before, our goal was to create ever-running breakrooms as effortlessly as possible. \autoref{fig:breakroom_initiator} shows the state of the ambient window when the user has clicked on the coffee icon. After the user clicks on this coffee icon, the other team members will see an indication that there is a breakroom in progress (see \autoref{fig:breakroom_indicator}). However, to avoid unnecessarily creating a break room and potentially interrupting the initiating user, the break room is not created until another user clicks on the coffee icon.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
@@ -90,39 +102,37 @@ As stated before, our goal was to make the creation of ever-running break rooms 
     \caption{Breakroom creation}
 \end{figure}
 
+Once at least two team members have clicked the breakroom icon, a breakroom is created in the back-end with twilio\footnote{\url{https://www.twilio.com}}, and they are redirected to the breakroom view (see \autoref{fig:breakroom}). At any point, other team members can join and leave the breakroom, and it will remain active as long as at least one team member is present. We want to avoid users forgetting the time and staying too long in the breakroom. For this purpose, a 15-minute timer is started as soon as one enters the break room. When this timer reaches its end, the user automatically leaves the break room.
 
-Once at least two team members are interested in a break room, a break room is actually created, and the two are redirected to the break room view (see \autoref{fig:breakroom}). At any point, other team members can join and leave the breakroom, and it stays active as long as at least one team member is part of it. We want to avoid users forgetting the time and staying too long in the break room. For this purpose, whenever a user enters a break room, a 15-minute timer is started. When this timer reaches its end, the user automatically leaves the break room.
-
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \includegraphics[width=.8\linewidth]{./images/breakroom.png}
     \caption{Breakroom, pictures are artificially created with \url{https://generated.photos/}}
     \label{fig:breakroom}
 \end{figure}
 
+\section{Direct Interactions}
+In addition to broadcasting sentiments and status messages, there is also the ability to interact directly with an individual team member. Hovering over individual team members brings up an overlay that offers three different interaction options, namely 1) direct messaging, 2) nudging, and 3) direct calling (see \autoref{fig:interactions}).
 
-\section{1:1 Interactions}
-In addition to the broadcasting functionality of moods and status messages, there also exists the possibility to interact with a single team member directly. An overlay appears when hovering over individual team members, offering three different interaction possibilities, namely 1) direct messaging, 2) nudging, and 3) direct calling (see \autoref{fig:interactions}).
-
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \includegraphics[width=.4\linewidth]{./images/interactions.png}
     \caption{1:1 interaction overlay }
     \label{fig:interactions}
 \end{figure}
 
-Direct messaging is very similar to sharing status messages but without mood sharing and team selection options. Upon a click on the messaging icon, the messaging window (\autoref{fig:messaging_window}) is shown at the user's current mouse position to minimize the distance required to interact with the window's contents. As in the status sharing window, there is a character limit of 140 characters.
+Direct messaging is very similar to status message sharing but without mood sharing and team selection options. After clicking the message icon, the message window (\autoref{fig:messaging_window}) is displayed at the user's current mouse position to minimize the distance needed to interact with the window's contents. As in the status sharing window, there is a character limit of 140 characters.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \includegraphics[width=.4\linewidth]{./images/messaging_window.png}
     \caption{Messaging window }
     \label{fig:messaging_window}
 \end{figure}
 
-In \autoref{fig:interaction_results}, the result of a successful interaction for each of the three possibilities is visualized. Direct messages differ from status messages in the messaging icon located left to the message itself. Nuding makes use of a hand icon pointing towards the team member in question. In a video call, the video stream overlays the team member's avatar, and the availability status of both participants is automatically set to \enquote{Focused}. The users can hover over their avatar should they wish to mute themselves or stop their video stream. To end an ongoing call, one has to hover over the relevant team member and click on the hanging up icon.
+In \autoref{fig:interaction_results} all three interaction options are visualized. Direct messages are distinguished from status messages by the message icon located to the left of the actual message. Nuding uses a hand icon pointing to the team member in question. For a video call, the video stream overlays the team member's avatar, and the availability status of both participants is automatically set to \enquote{Focused}. Users can hover over their avatar if they want to mute or pause the video stream. To end a call, you need to hover over the corresponding team member and click the hang-up icon.
 
-\begin{figure}[h!]
+\begin{figure}[h]
     \centering
     \begin{subfigure}{.3\textwidth}
         \centering
@@ -145,5 +155,3 @@ In \autoref{fig:interaction_results}, the result of a successful interaction for
     \caption{1:1 interactions}
     \label{fig:interaction_results}
 \end{figure}
-
-The \enquote{Happy to Interact} availability status was included to bring back the lack of serendipity in remote work. When selected by at least two members of a team, an automatic match-maker runs every minute and randomly pairs two people, which are then forwarded into a video call.
