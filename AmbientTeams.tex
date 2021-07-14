@@ -20,13 +20,24 @@
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{multirow}
 \usepackage[english]{babel}
 \usepackage{csquotes}
+\usepackage{tabularx}
 \renewcommand{\mkbegdispquote}[2]{\itshape}
 \usepackage[toc,page]{appendix}
 \usepackage[style=alphabetic]{biblatex}
 \addbibresource{thesis.bib}
 
+
+\usepackage{array}
+\usepackage{arydshln}
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+
+\renewcommand{\arraystretch}{1.1}
 
 \begin{document}
 \maketitle
@@ -48,7 +59,7 @@
 \tableofcontents
 \listoffigures
 \listoftables
-\lstlistoflistings
+% \lstlistoflistings
 
 \mainmatter
 \include{chapters/introduction}
