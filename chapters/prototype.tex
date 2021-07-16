@@ -20,7 +20,7 @@ The team overview window is responsible for maintaining a connection to the serv
 \begin{figure}[h]
     \centering
     \includegraphics[width=.8\linewidth]{./images/AT_overview.png}
-    \caption{Team overview window }
+    \caption{Team Overview Window }
     \label{fig:at_overview}
 \end{figure}
 
@@ -30,55 +30,55 @@ The Ambient window is always on top of other windows (see \autoref{fig:at_ambien
 \begin{figure}[h]
     \centering
     \includegraphics[width=.8\linewidth]{./images/AT_ambient_on_top.png}
-    \caption{Always-on-top ambient window while working on another task }
+    \caption{Always-on-Top Ambient Window While Working on Another Task}
     \label{fig:at_ambient_on_top}
 \end{figure}
 
-Further, certain functionality is only visible when the user is hovering over this window. When hovering over the ambient window, the user can select the team they want to show and sees the names of the individual team members, as shown in \autoref{fig:at_hover}.
+Further, certain elements are only visible when the user is hovering over this window. When hovering over the ambient window, the user can select the team they want to show and sees the names of the individual team members, as shown in \autoref{fig:at_hover}.
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{./images/AT_no_hover.png}
-        \caption{No hover }
+        \caption{No Hover}
         \label{fig:at_no_hover}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{./images/AT_hover.png}
-        \caption{Hover }
+        \caption{Hover}
         \label{fig:at_hover}
     \end{subfigure}
-    \caption{Ambient window}
+    \caption{Ambient Window}
 \end{figure}
 
 \section{Availability Status}
 AmbientTeams wants to keep the number of interruptions to a minimum, which is why there is the \enquote{Focused} availability state (see \autoref{fig:call}) that exists in addition to the three others (\enquote{Available}, \enquote{Offline}, and \enquote{Happy to Interact}). Users in this focused state cannot be called. Further, they don't see any direct messages or incoming nudges until they leave the focused state. In addition, focused users cannot directly interact with other team members, avoiding potential self-distraction. The availability state \enquote{Happy to Interact} was included to address the lack of serendipity in remote work. When selected by at least two team members, an automatic matchmaker runs every minute and randomly pairs two people, who are then routed to a video call.
 
 \section{Sharing Moods and Status Messages}
-The user can open the sharing window from both the team overview and the ambient window, and the system tray menu. All of those actions will open the sharing window as shown in \autoref{fig:sharing_manual}, where on the left, a preview of the current avatar and the selection of available moods are listed. There are nine available moods, visualized using popular emoticons available through OpenMoji\footnote{\url{https://openmoji.org}}, an open-source emoji project. The first four of the available emoticons are more optimistic, the fifth is a neutral face, and the last four are emoticons representing rather negative emotional states. The selection of the emoticons started with six basic emotions: surprise, fear, disgust, anger, happiness, and sadness \autocite{an2017two}. This list was expanded over time to better suit the work environment (TODO: Find references to support some of the moods/emotions that we added) by adding a neutral and tired emoticon and two more positive emotions (loving hearts and grinning) to make the selection more balanced. Due to limitations with the avatar API, we could not render \enquote{fear} well enough, which led us to remove it. On the right, the user can enter additional context in a simple, standard textbox. The contents of this textbox are, if available, pre-populated with the current status message for the currently selected team. Additionally, the text is highlighted when the window is created, facilitating overwriting the current status without using the mouse to select the text manually. Status messages' length is limited to 140 characters, motivated by the initial limit of Twitter \autocite{dullemond2013fixing}. Below the textbox, the user can find a button to share the status message with either all teams or a single team.
+The user can open the sharing window from both the team overview and the ambient window, and the system tray menu. All of those actions will open the sharing window as shown in \autoref{fig:sharing_manual}, where on the left, a preview of the current avatar and the selection of available moods are listed. There are nine available moods, visualized using popular emoticons available through OpenMoji\footnote{\url{https://openmoji.org}}, an open-source emoji project. The first four of the available emoticons are more optimistic, the fifth is a neutral face, and the last four are emoticons representing rather negative emotional states. The selection of the emoticons started with six basic emotions: surprise, fear, disgust, anger, happiness, and sadness \autocite{an2017two}. This list was expanded over time to better suit the work environment by adding a neutral and tired emoticon and two more positive emotions (loving hearts and grinning) to make the selection more balanced. Due to limitations with the avatar API, we could not render \enquote{fear} well enough, which led us to remove it. On the right, the user can enter additional context in a simple, standard textbox. The contents of this textbox are, if available, pre-populated with the current status message for the currently selected team. Additionally, the text is highlighted when the window is created, facilitating overwriting the current status without using the mouse to select the text manually. Status messages' length is limited to 140 characters, motivated by the initial limit of Twitter \autocite{dullemond2013fixing}. Below the textbox, the user can find a button to share the status message with either all teams or a single team.
 
-As a reminder for the user to share their moods and potential additional context with team members, the sharing window also appears automatically at pre-defined times. The location we chose for this popup is the lower right corner of the user's primary monitor to minimize the potential for distraction. Overall, the window has the same functionality but includes two additional buttons to defer the prompt for either 5 minutes or 1 hour (see \autoref{fig:sharing_auto}). The scheduled sharing window is displayed at three pre-defined times throughout the day, namely at 9:00, 13:00, and 16:00 local time.
+As a reminder for the user to share their moods and potential additional context with team members, the sharing window also appears automatically at pre-defined times. The location we chose for this popup is the lower right corner of the user's primary monitor to minimize the potential for distraction. Overall, the window has the same functionality but includes two additional buttons to defer the prompt for either 5 minutes or 1 hour (see \autoref{fig:sharing_auto}). The scheduled sharing window is displayed at three pre-defined times throughout the day, namely at 9:00, 13:00, and 16:00 local time. We chose those times because that is when most people are already or will still be working.
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{./images/sharing_manual.png}
-        \caption{Manually opened }
+        \caption{Manually Opened}
         \label{fig:sharing_manual}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{./images/sharing_auto.png}
-        \caption{Scheduled }
+        \caption{Scheduled}
         \label{fig:sharing_auto}
     \end{subfigure}
-    \caption{Sharing window}
+    \caption{Sharing Window}
 \end{figure}
 
-To ensure that the information shared within AmbientTeams is up-to-date, a few measures have been taken. The first is purely visual: avatars are increasingly hidden the longer there has been no current activity. Such activities include status and mood sharing, direct messaging, and nudging. This automatic hiding should motivate users to interact with such hidden team members and easily spot updates from colleagues. Another measure we have taken to avoid showing users outdated content is automatically resetting status updates and moods at midnight.
+To ensure that the information shared within AmbientTeams is always up-to-date, a few measures have been taken. The first is purely visual: avatars are increasingly hidden the longer there has been no current activity. Such activities include status and mood sharing, direct messaging, and nudging. This automatic hiding should motivate users to interact with such hidden team members and easily spot updates from colleagues. Another measure we have taken to avoid showing users outdated content is automatically resetting status updates and moods at midnight.
 
 Since the goal of AmbientTeams is to encourage informal communication, there is no chat history or other history built into the application. With this impermanence, we want to promote more casual and less formal communication and hope to avoid AmbientTeams becoming just another tool to keep track of work.
 
@@ -90,16 +90,16 @@ As mentioned before, our goal was to create ever-running breakrooms as effortles
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{./images/breakroom_initiator.png}
-        \caption{Initiating a breakroom creation }
+        \caption{Initiating a Breakroom Creation}
         \label{fig:breakroom_initiator}
     \end{subfigure}%
     \begin{subfigure}{.5\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{./images/breakroom_indicator.png}
-        \caption{Joining a breakroom }
+        \caption{Joining a Breakroom }
         \label{fig:breakroom_indicator}
     \end{subfigure}
-    \caption{Breakroom creation}
+    \caption{Breakroom Creation}
 \end{figure}
 
 Once at least two team members have clicked the breakroom icon, a breakroom is created in the back-end with twilio\footnote{\url{https://www.twilio.com}}, and they are redirected to the breakroom view (see \autoref{fig:breakroom}). At any point, other team members can join and leave the breakroom, and it will remain active as long as at least one team member is present. We want to avoid users forgetting the time and staying too long in the breakroom. For this purpose, a 15-minute timer is started as soon as one enters the breakroom. When this timer reaches its end, the user automatically leaves the breakroom.
@@ -107,7 +107,7 @@ Once at least two team members have clicked the breakroom icon, a breakroom is c
 \begin{figure}[h]
     \centering
     \includegraphics[width=.8\linewidth]{./images/breakroom.png}
-    \caption{Ongoing breakroom}
+    \caption{Ongoing Breakroom}
     \label{fig:breakroom}
 \end{figure}
 
@@ -117,7 +117,7 @@ In addition to broadcasting sentiments and status messages, there is also the ab
 \begin{figure}[h]
     \centering
     \includegraphics[width=.4\linewidth]{./images/interactions.png}
-    \caption{Direct interactions overlay }
+    \caption{Direct Interactions Overlay}
     \label{fig:interactions}
 \end{figure}
 
@@ -126,7 +126,7 @@ Direct messaging is very similar to status message sharing but without mood shar
 \begin{figure}[h]
     \centering
     \includegraphics[width=.4\linewidth]{./images/messaging_window.png}
-    \caption{Messaging window }
+    \caption{Messaging Window}
     \label{fig:messaging_window}
 \end{figure}
 
@@ -137,21 +137,21 @@ In \autoref{fig:interaction_results} all three interaction options are visualize
     \begin{subfigure}{.3\textwidth}
         \centering
         \includegraphics[width=.9\linewidth]{./images/DM.png}
-        \caption{Direct message }
+        \caption{Direct Message}
         \label{fig:dm}
     \end{subfigure}%
     \begin{subfigure}{.3\textwidth}
         \centering
         \includegraphics[width=.9\linewidth]{./images/nudging.png}
-        \caption{Nudging }
+        \caption{Nudging}
         \label{fig:nudging}
     \end{subfigure}
     \begin{subfigure}{.3\textwidth}
         \centering
         \includegraphics[width=.9\linewidth]{./images/call.png}
-        \caption{Ongoing video call }
+        \caption{Ongoing Video Call }
         \label{fig:call}
     \end{subfigure}
-    \caption{Direct interactions}
+    \caption{Direct Interactions}
     \label{fig:interaction_results}
 \end{figure}
