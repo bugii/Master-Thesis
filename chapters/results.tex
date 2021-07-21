@@ -1,102 +1,15 @@
-\chapter{Results and Discussion}
-\label{chapter:results_and_discussion}
+\chapter{Results}
+\label{chapter:results}
 
-In this chapter, we present and discuss the results we found by analyzing the collected data (see \autoref{table:data}), the results from the semi-structured interviews, and the findings from the two questionnaires. First, we examined overall usability in \autoref{section:usability} and found high usability scores. Furthermore, we analyzed the usage of AmbientTeams in \autoref{section:tool_usage_and_workflows}. Results show that AmbientTeams ran on average more than 7 hours per day (in the background) on participants' computers, with the time spent using the ambient window falling short of our expectations. Reasons for this were problems with positioning and resizing the ambient window. Lack of mood awareness and lack of social contacts were two challenges cited by our participants, highlighting the need for a mood-based micro-blogging approach (see \autoref{section:lack_of_awareness_and_social_contacts}). We discuss the results of each feature of AmbientTeams in \autoref{section:moods_were_shared_the_most}. Results show that sharing moods was the most frequently used feature. We observed that many participants are hesitant to share negative moods and discuss possible reasons for this in \autoref{section:negative_moods_and_honesty}. Regarding broader effects of AmbientTeams, we found that AmbientTeams 1) could increase awareness of availability and mood (\autoref{section:availability_and_mood}), 2) made getting to know each other better possible, specifically for one participant (\autoref{section:getting_to_know_each_other_better}), and 3) led to more (\enquote{natural}) communication in other tools (\autoref{section:bringing_back_natural_communication}). Additionally, self-reflection on moods was perceived as a positive side effect and is discussed in \autoref{section:mood_awareness_via_selfreflection}. Last but not least, in \autoref{section:workplace_isolation} we present the potential finding that AmbientTeams could potentially improve feelings of isolation in the workplace. However, as with all other findings, a more extensive study would be needed to make more meaningful statements.
+In this chapter, we present the results from the preliminary evaluation, based on the collected data (see \autoref{table:data}), the results from the semi-structured interviews, and the findings from the two questionnaires. First, we examined overall usability in \autoref{section:usability} and show high usability scores. Second, we identified two challenges when working remotely, namely a lack of mood awareness and social contacts, highlighting the need for a mood-based micro-blogging approach (see \autoref{section:lack_of_awareness_and_social_contacts}). We discuss the impact of each feature of AmbientTeams in \autoref{section:moods_were_shared_the_most}. Results show that sharing moods was the most frequently used feature. 
 
-\section{Usability}
-\label{section:usability}
-%  more info on usability score: https://measuringu.com/sus/
-% A SUS score above 68 would be considered above average, and anything below 68 is below average.
-% # A SUS score of 74 has higher perceived usability than 70\% of all products tested. It can be interpreted as a grade of a B-.
+We observed that many participants are hesitant to share negative moods and discuss possible reasons for this in \autoref{section:negative_moods_and_honesty}. Regarding broader effects of AmbientTeams, we found that AmbientTeams 1) could increase awareness of availability and mood (\autoref{section:availability_and_mood}), 2) made it easier to get to know each other (\autoref{section:getting_to_know_each_other_better}), and 3) encouraged more (\enquote{natural}) communication in other tools (\autoref{section:bringing_back_natural_communication}). Additionally, self-reflection on moods was perceived as a positive side effect and is discussed in \autoref{section:mood_awareness_via_selfreflection}. Last but not least, in \autoref{section:workplace_isolation} we present the potential finding that AmbientTeams could potentially improve feelings of isolation in the workplace. However, as with all other findings, a more extensive study would be needed to make more meaningful statements.
 
-The results from the usability questionnaire that participants answered at the end of the study are presented in \autoref{fig:usability_questionnaire}. For the questions with even numbers, e.g., Q2, Q4, etc., negative (red) answers are desirable, while for questions with odd numbers, e.g., Q1, Q3, etc., positive (blue) answers are ideal. In general, the results look very promising. However, there are some answers that are worth looking at more closely. The \enquote{disagree} answer from Q1 came from P3. This participant also did not think that the various functions of the application were well-integrated (Q5). The reason for these answers could be found in the interview, where the following statement was made:
-
-\begin{displayquote}
-    Uhm, as a separate tool, I would not use it. Integrated into another communication tool, I might use it, yes. -P3
-\end{displayquote}
-
-The \enquote{agree} response in questions Q4 and Q10 came from P2, indicating that the number of features in AmbientTeams is quite challenging to understand on the first encounter. Nevertheless, this participant did not mention any usability issues either in the interview or through direct feedback, leading us to believe that the application was easy to use after the initial challenge of understanding the application.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\linewidth]{plots/usability_likert.pdf}
-    \caption{Usability Questionnaire Results}
-    \label{fig:usability_questionnaire}
-\end{figure}
-
-Following the instructions from \textcite{sauroSUS}, each participant's responses were then converted to the SUS score to obtain a comparable value. The resulting average SUS score was 81.1 across all five participants (see \autoref{table:sus}). According to \textcite{sauroSUS}, one would need to score above 80.3 to be in the top 10\% of the 500 studies using the SUS. 80.3 is also the point where users are more likely to be recommending the product to a friend \autocite{sauroSUS}, showing that AmbientTeams was easy and intuitive to use.
-
-\begin{table}[h] \footnotesize
-    \centering
-    \begin{tabularx}{.35\textwidth}{X X}
-        \toprule
-        Participant & SUS score \\
-        \midrule
-        P1          & 82.5      \\
-        % \hline
-        P2          & 80.0      \\
-        % \hline
-        P3          & 70.0      \\
-        % \hline
-        P4          & 82.5      \\
-        % \hline
-        P5          & 90.5      \\
-        \midrule
-        Average     & 81.1      \\
-        \bottomrule
-    \end{tabularx}
-    \caption{Usability Questionnaire Results and Resulting SUS Score}
-    \label{table:sus}
-\end{table}
-
-\section{Tool Usage and Workflows (RQ4)}
-\label{section:tool_usage_and_workflows}
-
-\subsection{General Usage}
-A detailed timeline view of participants and their selected availability state (\enquote{Available}, \enquote{Focused}, or \enquote{Happy to Interact}) during the study is visualized in \autoref{fig:non_offline}. The time a user is in one of these three states is considered the time the application was running. This time also includes the time when the application was not active and was running in the background. This is possible because the user is automatically put into an offline state when the connection to the server is lost. Upon successful reconnection to the server, the user's availability state is also automatically set to \enquote{Available}. It is, therefore, possible that this metric could be slightly flawed if users manually set their availability status to \enquote{Offline}. However, this would only underestimate the online time displayed in \autoref{fig:non_offline}. Thus, the times shown there are as conservative as possible. Overall, the average time spent in an online state, and thus running AmbientTeams, was 7.13 ($\sigma=3.57$) hours per day (not including the three days with no runtime at all), with a minimum of 0.01 and a maximum of 12.7 hours. Apart from inactivity on weekends, 5 out of a total of 30 working days showed no or minimal runtime. The fact that P1 could not attend the kick-off meeting with the rest of the group explains the lack of use on the first day of the study. In general, the relatively short runtime on the first day was to be expected since the kick-off meeting was held in the early afternoon. The remaining days with very short runtimes most likely indicate non-work days for these participants. This is because, if those were workdays, AmbientTeams would have started automatically as soon as the computer booted up.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\linewidth]{plots/non_offline.pdf}
-    \caption{Time Spent In the Different Availability States}
-    \label{fig:non_offline}
-\end{figure}
-
-The results show that participants did not change their availability state often and thus relied mainly on AmbientTeams' automatic setting of the availability state. The \enquote{Focused} availability state was selected a few times in the first two days of the study, but this behavior did not continue throughout the study. Similarly, P1 and P2 selected the \enquote{Happy to Interact} availability state a total of three times. However, two of those lasted for two seconds, and one during the kick-off meeting for only one minute, making it barely visible in \autoref{fig:non_offline}.
-
-\subsection{Ambient and Overview Window}
-\autoref{fig:opened_vs_focused} shows that both the ambient window and the team overview window were open almost exclusively when these windows were in focus. In other words, these two windows were opened, an interaction occurred, and then they were closed or minimized again, disappearing from the user's screen. This is the result we expected in the case of the team overview. However, contrary to our assumptions, the ambient window was used in a very similar way. Conclusively, the ambient window was rarely kept open as a glanceable, always-on-top team view when working on other tasks.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\linewidth]{plots/open_vs_focus.pdf}
-    \caption{Time Using AmbientTeams: Opened vs. Opened and Focused}
-    \label{fig:opened_vs_focused}
-\end{figure}
-
-The interviews gave us some more insights into possible answers for why the ambient window was not kept open while working on other tasks.
-
-\begin{displayquote}
-    I tried it in the corner of the monitor, then it did not work, but in the corner of the window did not really work because there you have to click to close other windows. Then I put it somewhere in the middle, but then I needed to put some buttons there, so sometimes I got annoyed and then closed it. -P1
-\end{displayquote}
-
-We suspect that this user was using a single monitor configuration and thus had difficulty finding a suitable position for the ambient window. P3 mentioned that the ambient window was too small and, therefore, difficult to move. This suggests that this participant might have missed the introduction of the resizing feature during the kick-off meeting, or the part was not demonstrated in enough detail. In addition to the inconvenience of the ambient window perceived by P1 and P3, P2 mentioned that manually closing an application that launches automatically is almost automatic for them due to established habits. The inconvenience and difficulty of positioning the ambient window is a fairly crucial issue that may require further development of AmbientTeams; the case described by P2 could be resolved in a future study by not allowing the closing of the ambient window.
-
-To better fit the ambient window into the workflow, P1 suggested that ideally, it should not remain on top of other windows. Instead, it should disappear into the background and only come back to the foreground when a team member has shared something new. P3 also suggested that the ambient window should ideally be hidden when not in use.
-
-Despite the criticism of the ambient window, it was used by all participants except P5 and was seen by P4 as one of the best aspects of AmbientTeams due to its refreshing look and feel:
-
-\begin{displayquote}
-    I liked that the ambient window feels very dynamic and refreshing compared to other tools. -P4
-\end{displayquote}
-
-Despite this positive statement, this participant used the team overview window more, which is surprising since all participants were only part of one team during the study, which we believe eliminates the potential advantage of the team overview window. Besides the annoyance of always being in the foreground, we believe that another reason could be that the ambient window is a somewhat novel and unknown approach compared to more traditional applications. In fact, P5 stated exactly that: \textit{\enquote{I think it [reason for not using the ambient window] was some insecurity on my part}}. Therefore, a more extended period of usage and getting used to such a window might be required.
-
-However, there were no complaints that the content displayed in the ambient window was distracting in any way, making us feel optimistic about the ambient window and its general appearance. The suggested improvements for better usability are all feasible and could be implemented with reasonable effort.
+Last, we analyzed the usage of AmbientTeams in \autoref{section:tool_usage_and_workflows}. Results show that AmbientTeams ran on average more than 7 hours per day (in the background) on participants' computers, with the time spent using the ambient window falling short of our expectations. Reasons for this were problems with positioning and resizing the ambient window.
 
 \section{Lack of Awareness and Social Contacts (RQ1)}
 \label{section:lack_of_awareness_and_social_contacts}
-From the interviews, we identified two reasons why there is a need for mood sharing in the workplace: the lack of 1) awareness and 2) social interactions in remote work environments. This finding confirms and reinforces our motivation for developing AmbientTeams.
+From the interviews, we identified two reasons why there is a need for mood sharing in the workplace: the lack of 1) awareness and 2) social interactions in remote work environments.
 
 \bigskip\noindent\textbf{Lack of Mood Awareness}
 
@@ -138,7 +51,7 @@ In conclusion, there appears to be a need for an approach that provides mood awa
 
 \section{Moods Were Shared the Most (RQ2)}
 \label{section:moods_were_shared_the_most}
-Moods were the most actively shared statuses, with a total of 31 moods shared. According to the interviews, a primary reason for sharing moods was the automatically scheduled popup, which helped to remind the participants to share something. The data confirm this finding; 25 of the 32 shared moods were shared through the scheduled popup window. However, the participants usually just shared the mood through an emoticon and did not attach a text message, as shown in \autoref{fig:moods_status_messages}. From P2, we learned that a potential reason could be that it was simply a lot quicker only to share the mood via emoticon, requiring only one click. P5 also mentioned that he/she did not see a reason to provide any more information about the shared moods (which was \enquote{tired} ten out of 12 times).
+Moods were the most actively shared statuses, with a total of 31 moods shared (out of 45 total interactions). According to the interviews, a primary reason for sharing moods was the automatically scheduled popup, which helped to remind the participants to share something. The data confirm this finding; 25 of the 32 shared moods were shared through the scheduled popup window. However, the participants usually just shared the mood through an emoticon and did not attach a text message, as shown in \autoref{fig:moods_status_messages}. From P2, we learned that a potential reason could be that it was simply a lot quicker only to share the mood via emoticon, requiring only one click. P5 also mentioned that he/she did not see a reason to provide any more information about the shared moods (which was \enquote{tired} ten out of 12 times).
 
 \begin{figure}[h]
     \centering
@@ -174,7 +87,7 @@ In contrast to the commonly shared moods, only eight status messages were shared
     \label{table:status_messages}
 \end{table}
 
-Looking at \autoref{fig:moods_status_messages} or \autoref{table:status_messages} shows that in only three cases, moods and status messages were shared simultaneously. To our surprise, no negative mood (such as \enquote{tired}, \enquote{angry}, or \enquote{sad}) were further explained with the help of a status message. All three attached moods were either of a happy or neutral nature. However, the neutral mood shared with status message 5 (despite its sad tone) could be due to the absence of an empathy mood in AmbientTeams or a possible mistake by that participant. It becomes apparent that 62.5\% of all status messages were sent on one day. The first three messages on that day were all related to a soccer game, which seemed to be of general interest to the group. P3 also described the motivation for sharing such common feelings:
+Looking at \autoref{fig:moods_status_messages} or \autoref{table:status_messages} shows that in only three cases, moods and status messages were shared simultaneously. To our surprise, no negative moods (such as \enquote{tired}, \enquote{angry}, or \enquote{sad}) were further explained with the help of a status message. All three attached moods were either of a happy or neutral nature. However, the neutral mood shared with status message 5 (despite its sad tone) could be due to the absence of an empathy mood in AmbientTeams or a possible mistake by that participant. It becomes apparent that 62.5\% of all status messages were sent on one day. The first three messages on that day were all related to a soccer game, which seemed to be of general interest to the group. P3 also described the motivation for sharing such common feelings:
 
 \begin{displayquote}[][]
     [...] if you have something that you are very happy about, you think that other people also share, then you are more motivated to share it as well. -P3
@@ -182,13 +95,13 @@ Looking at \autoref{fig:moods_status_messages} or \autoref{table:status_messages
 
 While the scheduled popup window helped remind participants to share something, knowing the importance of social interactions with colleagues (P1) or feeling closer to each other (P5) were other motivators for sharing something with the team.
 
-Given the relatively short time of the study, it is not surprising that many of its features have not been used. Specifically, the features aimed at spontaneous interactions, such as the breakroom and random pairing for a video call, were not used at all. There were two attempts to set up a breakroom, one on the second day of the study and one on the second to last day, but neither was successful because no other team member joined. A reason for no one joining could be that there were only five team members, reducing the likelihood that another person would also take a break. Alternatively, the short time the ambient window was running in the foreground could have resulted in break room requests not being seen at all. During the interview P3 provided a possible explanation for why the spontaneous video chat features were not used:
+Given the relatively short time of the study, it is not surprising that many of its features have not been used. Specifically, the features aimed at spontaneous interactions, such as the breakroom and random pairing for a video call, were not used at all. There were two attempts to set up a breakroom, one on the second day of the study and one on the second to last day, but neither was successful because no other team member joined. During the interview P3 provided a possible explanation for why the spontaneous video chat features were not used:
 
 \begin{displayquote}[][]
     [...] I have to mention that two or three weeks ago we started with virtual breakrooms on Friday afternoons to try to keep up with people from work, especially for new people, because we don't really get the chance to get to know each other in home office. -P3
 \end{displayquote}
 
-Consequently, it is possible that it was sufficient for the participating teams to meet once a week in their own virtual breakroom. Regardless of the use of the breakroom integrated into AmbientTeams, this suggests that such a breakroom concept is generally perceived as important, as the in-house breakroom is well attended and gives new employees the chance to meet the others according to P3. Like the breakroom, the direct video calls and nudging functionality were only used for testing purposes during the first kick-off meeting. While this shows that the team was aware of how to use these features, they do not seem to have felt the need to do so.
+Consequently, it is possible that it was sufficient for the participating teams to meet once a week in their own virtual breakroom. Like the breakroom, the direct video calls and nudging functionality were only used for testing purposes during the first kick-off meeting. %While this shows that the team was aware of how to use these features, they do not seem to have felt the need to do so.
 
 The picture is somewhat different when analyzing the direct messages that were sent via AmbientTeams. A total of six direct messages were sent through AmbientTeams, from three different participants. One of these direct messages was a response to a missed call (during the kick-off meeting), and the other five were either a greeting or of the type \enquote{what are you doing?}. P1 gives an indication of why the team did not use the functionality described above:
 
@@ -210,7 +123,7 @@ Looking at \autoref{fig:moods_distribution}, it is clear that except P5, who mos
     \label{fig:moods_distribution}
 \end{figure}
 
-Therefore, this finding raised the question of whether this was the true distribution of moods during the study or whether there might be a tendency for more positive moods to be shared, regardless of their true feeling. While P1 sees no problem with sharing negative moods \textit{\enquote{we are not in a happy boat where everyone is happy all the time}}, others (P2, P3, P4) would be more hesitant to share such moods. Reasons for not sharing negative moods include 1) \textit{not wanting to explain further}, either for personal reasons or to avoid being distracted (P2), 2) \textit{being fairly new to the company} (P4), 3) \textit{not wanting to share with the whole team} (P3), or 4) because \textit{no one wants to talk about negative feelings at work} (P3).
+Therefore, this finding raised the question of whether this was the true distribution of moods during the study or whether there might be a tendency for more positive moods to be shared, regardless of their true feeling. While P1 sees no problem with sharing negative moods \textit{\enquote{we are not in a happy boat where everyone is happy all the time}}, others (P2, P3, P4) would be more hesitant to share such moods. Reasons for not sharing negative moods include 1) \textit{not wanting to explain further}, either for personal reasons or to avoid being distracted (P2), 2) \textit{being fairly new to the company}, 3) \textit{not wanting to share with the whole team} (P3), or 4) because \textit{no one wants to talk about negative feelings at work}.
 
 % \begin{displayquote}
 %     Yes, I think then it would be harder to share an angry mood. And if you are mad for private reasons, you maybe don't want to explain more. \\
@@ -260,7 +173,97 @@ P4 also brings up that sharing positive moods, even if they are not truthful, co
 %     -P3
 % \end{displayquote}
 
-\section{Availability and Mood (RQ3.1)}
+
+\section{Tool Usage and Workflows (RQ3)}
+\label{section:tool_usage_and_workflows}
+
+\subsection{Ambient and Overview Window}
+\autoref{fig:opened_vs_focused} shows that both the ambient window and the team overview window were open almost exclusively when these windows were in focus. In other words, these two windows were opened, an interaction occurred, and then they were closed or minimized again, disappearing from the user's screen. This is the result we expected in the case of the team overview. However, contrary to our assumptions, the ambient window was used in a very similar way. Conclusively, the ambient window was rarely kept open as a glanceable, always-on-top team view when working on other tasks.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{plots/open_vs_focus.pdf}
+    \caption{Time Using AmbientTeams: Opened vs. Opened and Focused}
+    \label{fig:opened_vs_focused}
+\end{figure}
+
+The interviews gave us some more insights into possible reasons for why the ambient window was not kept open while working on other tasks.
+
+\begin{displayquote}
+    I tried it in the corner of the monitor, then it did not work, but in the corner of the window did not really work because there you have to click to close other windows. Then I put it somewhere in the middle, but then I needed to put some buttons there, so sometimes I got annoyed and then closed it. -P1
+\end{displayquote}
+
+We suspect that this user was using a single monitor configuration and thus had difficulty finding a suitable position for the ambient window. P3 mentioned that the ambient window was too small and, therefore, difficult to move. This suggests that this participant might have missed the introduction of the resizing feature during the kick-off meeting, or the part was not demonstrated in enough detail. In addition to the inconvenience of the ambient window perceived by P1 and P3, P2 mentioned that manually closing an application that launches automatically is almost automatic for them due to established habits. The inconvenience and difficulty of positioning the ambient window is a fairly crucial issue that may require further development of AmbientTeams; the case described by P2 could be resolved in a future study by not allowing the closing of the ambient window.
+
+To better fit the ambient window into the workflow, P1 suggested that ideally, it should not remain on top of other windows. Instead, it should disappear into the background and only come back to the foreground when a team member has shared something new. P3 also suggested that the ambient window should ideally be hidden when not in use.
+
+Despite the criticism of the ambient window, it was used by all participants except P5 and was seen by P4 as one of the best aspects of AmbientTeams due to its refreshing look and feel:
+
+\begin{displayquote}
+    I liked that the ambient window feels very dynamic and refreshing compared to other tools. -P4
+\end{displayquote}
+
+Despite this positive statement, this participant used the team overview window more, which is surprising since all participants were only part of one team during the study, which we believe eliminates the potential advantage of the team overview window. 
+
+\subsection{Usability}
+\label{section:usability}
+%  more info on usability score: https://measuringu.com/sus/
+% A SUS score above 68 would be considered above average, and anything below 68 is below average.
+% # A SUS score of 74 has higher perceived usability than 70\% of all products tested. It can be interpreted as a grade of a B-.
+While there were no usability issues during the study, we still asked the participants to fill out a usability questionnaire before the final interview. The results from the standardized usability questionnaire that participants answered at the end of the study are presented in \autoref{fig:usability_questionnaire}. For the questions with even numbers, e.g., Q2, Q4, etc., negative (red) answers are desirable, while for questions with odd numbers, e.g., Q1, Q3, etc., positive (blue) answers are ideal. In general, the results look very promising, showing high usability ratings overall. However, there are some answers that are worth discussing. The \enquote{disagree} answer from Q1 came from P3. This participant also did not think that the various features of the application were well-integrated (Q5). The reason for these answers could be found in the interview, where the following statement was made:
+
+\begin{displayquote}
+    Uhm, as a separate tool, I would not use it. Integrated into another communication tool, I might use it, yes. -P3
+\end{displayquote}
+
+The \enquote{agree} response in questions Q4 and Q10 came from P2, indicating that the number of features in AmbientTeams is quite challenging to understand on the first encounter. Nevertheless, this participant did not mention any usability issues either in the interview or through direct feedback, leading us to believe that the application was easy to use after the initial challenge of understanding the application.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{plots/usability_likert.pdf}
+    \caption{Usability Questionnaire Results}
+    \label{fig:usability_questionnaire}
+\end{figure}
+
+Following the instructions from \textcite{sauroSUS}, each participant's responses were then converted into the SUS score to obtain a comparable value. The resulting average SUS score was 81.1 ($\sigma=6.58$, $min=70.0$, $max=90.5$) across all five participants. According to \textcite{sauroSUS}, one would need to score above 80.3 to be in the top 10\% of the 500 studies using the SUS. 80.3 is also the point where users are more likely to be recommending the product to a friend \autocite{sauroSUS}, showing that AmbientTeams was easy and intuitive to use.
+
+%\begin{table}[h] \footnotesize
+%    \centering
+  %  \begin{tabularx}{.35\textwidth}{X X}
+  %      \toprule
+  %      Participant & SUS score \\
+  %      \midrule
+  %      P1          & 82.5      \\
+  %      % \hline
+  %      P2          & 80.0      \\
+  %      % \hline
+  %      P3          & 70.0      \\
+  %      % \hline
+  %      P4          & 82.5      \\
+  %      % \hline
+  %      P5          & 90.5      \\
+  %      \midrule
+  %      Average     & 81.1      \\
+  %      \bottomrule
+  %  \end{tabularx}
+ %   \caption{Usability Questionnaire Results and Resulting SUS Score}
+%    \label{table:sus}
+%\end{table}
+
+
+\subsection{Availability}
+A detailed timeline view of participants and their selected availability state (\enquote{Available}, \enquote{Focused}, or \enquote{Happy to Interact}) during the study is visualized in \autoref{fig:non_offline}. The time a user is in one of these three states is considered the time the application was running. This time also includes the period when the application was not active and was running in the background. This is possible because the user is automatically put into an offline state when the connection to the server is lost. Upon successful reconnection to the server, the user's availability state is also automatically set to \enquote{Available}. It is, therefore, possible that this metric could be slightly flawed if users manually set their availability status to \enquote{Offline}. However, this would only underestimate the online time displayed in \autoref{fig:non_offline}. Thus, the times shown there are conservative. Apart from inactivity on weekends, five out of a total of 30 working days showed no or minimal runtime (less than one hour), leading us to remove those five data points. The average time spent in an online state, and thus running AmbientTeams, was 7.68 ($\sigma=3.09$) hours per day, with a minimum of 2.04 and a maximum of 12.7 hours. The fact that P1 could not attend the kick-off meeting with the rest of the group explains the lack of use on the first day of the study. In general, the relatively short runtime on the first day was to be expected since the kick-off meeting was held in the early afternoon. The remaining days with very short runtimes most likely indicate non-work days for these participants. This is because, if those were workdays, AmbientTeams would have started automatically as soon as the computer booted up.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{plots/non_offline.pdf}
+    \caption{Time Spent In the Different Availability States}
+    \label{fig:non_offline}
+\end{figure}
+
+The results show that participants did not change their availability state often and thus relied mainly on AmbientTeams' automatic setting of the availability state. The \enquote{Focused} availability state was selected a few times in the first two days of the study, but this behavior did not continue throughout the study. Similarly, P1 and P2 selected the \enquote{Happy to Interact} availability state a total of three times. However, two of those lasted for two seconds, and one during the kick-off meeting for only one minute, making it barely visible in \autoref{fig:non_offline}.
+
+\section{Availability and Mood (RQ4.1)}
 \label{section:availability_and_mood}
 The first effect of AmbientTeams was that participants learned who was around (P1, P3) and how they were doing (P1, P4). P5 also noted a significant difference from their previous way of sharing moods and feelings, which was usually via text in the morning:
 
@@ -280,7 +283,7 @@ AmbientTeams helped P4 raise awareness of colleagues with whom they otherwise ha
 
 This increased awareness had other implications, namely the opportunity to get to know each other better and to bring back a more natural way of communicating in remote work. We will discuss both in the next sections.
 
-\section{Getting to Know Each Other Better (RQ3)}
+\section{Getting to Know Each Other Better (RQ4)}
 \label{section:getting_to_know_each_other_better}
 AmbientTeams led one person in particular (P4) to find out that a colleague was very funny, which was unknown to this person before the study.
 
@@ -296,7 +299,7 @@ We thus conclude that AmbientTeams has the potential to ease getting to know ind
 %     Not really, to be honest. I just had the confirmation that one team member is really just always very positive and too nice. -P3
 % \end{displayquote}
 
-\section{Bringing Back \enquote{Natural} Communication (RQ3)}
+\section{Bringing Back \enquote{Natural} Communication (RQ4)}
 \label{section:bringing_back_natural_communication}
 This section demonstrates the capabilities of AmbientTeams to bring back the more \enquote{natural} communication known from traditional office work to a remote environment. Such communication is enabled by providing \textit{a lot more opportunities to approach another} (P5). P1 explains that by sharing moods and status messages with the entire team, everyone can see it, similar to when the entire team is in the office, and as a consequence, can react to what has been shared:
 
@@ -306,12 +309,12 @@ This section demonstrates the capabilities of AmbientTeams to bring back the mor
 
 Another reason for how AmbientTeams can trigger communication includes \textit{seeing when someone comes online} (P1), which resulted in contacting this person. We see this as the equivalent of going into the office and being reminded of something that needs to be done simply by seeing your co-workers. Also, the fact that the majority of the participants would not necessarily share negative moods, P2 mentioned that he/she would still offer help in cases of an angry or stressed mood, another possible communication trigger.
 
-Although P2 indicated that AmbientTeams makes it easy to start a conversation by \textit{\enquote{simply clicking on the avatar of [a colleague] to start a conversation}} this was not observable in the data collected, as few direct messages were sent and no video calls were made. We, however, observed that AmbientTeams served as a trigger for communication with other tools (e.g., Microsoft Teams, Zoom), which was also brought up in the interviews of P4 and P1. To this end, we also analyzed participants' active window titles during the study to see if there was a higher likelihood of visiting external communication applications after leaving AmbientTeams. More details on active window titles can be found at the end of \autoref{table:data}. As you can see in \autoref{fig:active_windows} on the left, AmbientTeams was the tenth most frequently used active application. Over the entire duration of the study, the most common communication tools among all participants were Microsoft Teams (4th), Microsoft Outlook (5th), and Skype (9th). The distribution in the chart on the right includes only the active applications that immediately followed AmbientTeams' usage. It can be seen that another application made it into the top ten most active applications: Zoom (rank 3). Two of the three previously mentioned communication tools also improved in rank: Microsoft Teams (rank 1) and Skype (rank 7). The fact that Microsoft Outlook dropped one rank seems reasonable to us, as email is an asynchronous form of communication which we did not expect to be impacted by AmbientTeams. While it is not clear whether the communication promoted by AmbientTeams was work-related or not, P4 mentioned during the interview that he/she had more non-work-related communication during the study. These findings further suggest that AmbientTeams promoted communication in other tools focusing on informal, synchronous communication.
+Although P2 indicated that AmbientTeams makes it easy to start a conversation by \textit{\enquote{simply clicking on the avatar of [a colleague] to start a conversation}} this was not observable in the data collected, as few direct messages were sent and no video calls were made. We, however, observed that AmbientTeams served as a trigger for communication with other tools (e.g., Microsoft Teams, Zoom), which was also brought up in the interviews of P4 and P1. To this end, we also analyzed participants' active window titles during the study to see if there was a higher likelihood of visiting external communication applications after leaving AmbientTeams. More details on active window titles can be found at the end of \autoref{table:data}. As you can see in \autoref{fig:active_windows} on the left, AmbientTeams was the tenth most frequently used active application. Over the entire duration of the study, the most common communication tools among all participants were Microsoft Teams (4th), Microsoft Outlook (5th), and Skype (9th). The distribution in the chart on the right includes only the active applications that immediately followed AmbientTeams' usage. Two of the three previously mentioned communication tools also improved in rank: Microsoft Teams (rank 2) and Skype (rank 6). While it is not clear whether the communication promoted by AmbientTeams was work-related or not, P4 mentioned during the interview that he/she had more non-work-related communication during the study. The fact that Microsoft Outlook was not affected and remains on rank 5, further suggests that AmbientTeams promoted communication in other tools focusing on informal communication.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=.7\linewidth]{plots/active_windows.pdf}
-    \caption{Overall Active Window Distribution and Active Windows Following AmbientTeams}
+    \caption{Overall Active Application Distribution and Active Applications Following AmbientTeams}
     \label{fig:active_windows}
 \end{figure}
 
@@ -340,7 +343,7 @@ Although P2 indicated that AmbientTeams makes it easy to start a conversation by
 %     I think in that study not. But if somebody would have set an angry or stressed mood I would have helped him/her, if my current knowledge allowed it. -P2
 % \end{displayquote}
 
-\section{Mood Awareness via Self-Reflection (RQ3.3)}
+\section{Mood Awareness via Self-Reflection (RQ4.2)}
 \label{section:mood_awareness_via_selfreflection}
 
 \begin{displayquote}
@@ -353,7 +356,7 @@ In the previous sections, we presented results depicting the effect of AmbientTe
     If I had something that could then show me afterward that for example, every time I do something for IT I am very happy, then I can maybe try to seek more tasks in IT and find my potential in IT and my life itself to make any further education for instance. -P3
 \end{displayquote}
 
-\section{Workplace Isolation (RQ3.4)}
+\section{Workplace Isolation (RQ4.3)}
 \label{section:workplace_isolation}
 
 The above sections may already suggest the ability of AmbientTeams to reduce feelings of workplace isolation within knowledge work teams. This qualitative data was complemented by our approach to measure workplace isolation quantitatively; a questionnaire was surveyed before and after the study period. Before looking at the results of the questionnaires, it should be noted that we had to adjust the scale due to an error on our side. The original workplace isolation questionnaire uses a 7-point Likert scale. Unfortunately, our post-study questionnaire included a flaw where its answer range was only a 5-point Likert scale. To make the two somewhat comparable, the answers from the pre-study questionnaire for \enquote{somewhat disagree} and \enquote{disagree} were combined into \enquote{disagree}, and similarly the answers for \enquote{somewhat agree} and \enquote{agree} were combined into \enquote{agree}.
@@ -366,5 +369,4 @@ The above sections may already suggest the ability of AmbientTeams to reduce fee
 \end{figure}
 
 In \autoref{fig:workplace_isolation}, we see a slight trend toward more \enquote{strongly agree} for questions 1-3, 5, 6, 9, and 10, indicating a decrease in feelings of isolation at work. However, some responses also worsened slightly, namely Q4 and Q8. Despite the results showing improvements in Q9 and Q10, we cannot assume that these results are effects attributable to the use of AmbientTeams for two reasons. First, the content discussed within and facilitated by AmbientTeams was not work-related. Second, due to the small size of the study, there was no control group, so a comparison between the two questionnaire results is highly speculative. Nonetheless, as in this study, the questionnaire could be a suitable supplement for a more extensive study in the future to obtain more accurate information about perceptions of isolation in the workplace. We see it as a valuable complement to the semi-structured interview and are optimistic about the potential of AmbientTeams to reduce feelings of workplace isolation in knowledge work teams.
-
 
