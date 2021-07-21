@@ -1,8 +1,8 @@
 \chapter{Preliminary Evaluation}
 \label{chapter:preliminary_evaluation}
-To answer the research questions (see \autoref{chapter:introduction} for more information), we conducted a preliminary evaluation. In the small scope of this evaluation, we wanted to learn about the status messages and moods knowledge workers share with their team members, what they learn from their interactions with their teammates and the overall impact on their perceptions of isolation in the workplace. The feedback can then be used to develop both the study and the tool further.
+To answer the research questions (see \autoref{chapter:introduction} for more information), we conducted a preliminary evaluation. In the small scope of this evaluation, we wanted to learn about the status messages and moods knowledge workers share with their team members, what they learn from their interactions with their teammates, and the overall impact on their perceptions of isolation in the workplace. The feedback can then be used to develop both the study and the tool further.
 
-The timeline of the preliminary evaluation is shown in \autoref{fig:study_timeline}. Before the study was officially launched with the kick-off meeting with the entire team, each participant was asked to sign and return the consent form (see \autoref{chapter:consent_form}). In addition, each participant was asked to complete a questionnaire that included some demographic questions and a 10-item questionnaire about their perception of isolation in the workplace. During the kick-off meeting, participants were given the opportunity to ask any questions about the consent form. The goal of the kick-off meeting was to install AmbientTeams and show the team each of the features. Following the kick-off meeting, AmbientTeams was deployed for at least three working days (in our case, it was five). After that, but before the final meeting, another questionnaire was sent to the participants to have a before and after comparison of the workplace isolation perceptions. Last but not least, a final interview was conducted with each participant individually to get more qualitative insights.
+The timeline of the preliminary evaluation is shown in \autoref{fig:study_timeline}. Before the study was officially launched with the kick-off meeting, each participant was asked to sign and return the consent form (see \autoref{chapter:consent_form}). In addition, each participant was asked to complete a questionnaire that included some demographic questions and a 10-item questionnaire about their perception of isolation in the workplace. During the kick-off meeting, participants were given the opportunity to ask any questions about the consent form. The goal of the kick-off meeting was to install AmbientTeams and show the team all the features and functionality of AmbientTeams. Following the kick-off meeting, AmbientTeams was deployed for at least three working days (in our case, it was five). After that, but before the final meeting, another questionnaire was sent to the participants to have a before and after comparison of the workplace isolation perceptions. Last but not least, a final interview was conducted with each participant individually to get more qualitative insights.
 
 \begin{figure}[h]
     \centering
@@ -55,52 +55,52 @@ The team was happy to use AmbientTeams for a workweek (five days) instead of the
         \multirow{2}{*}{Team}                & name of the team                       & \multirow{2}{*}{Server} & \multirow{2}{*}{-}            \\
                                              & belonging team members                 &                         &                               \\
         \midrule
-        \multirow{4}{*}{Status message}      & timestamp                              & \multirow{4}{*}{Server} & \multirow{4}{*}{RQ2, RQ4    } \\
+        \multirow{4}{*}{Status message}      & timestamp                              & \multirow{4}{*}{Server} & \multirow{4}{*}{RQ2, RQ3    } \\
                                              & text content of the status             &                         &                               \\
                                              & team where status was posted           &                         &                               \\
                                              & user the status belongs to             &                         &                               \\
         \midrule
-        \multirow{4}{*}{Direct message}      & timestamp                              & \multirow{4}{*}{Server} & \multirow{4}{*}{RQ2, RQ4    } \\
+        \multirow{4}{*}{Direct message}      & timestamp                              & \multirow{4}{*}{Server} & \multirow{4}{*}{RQ2, RQ3    } \\
                                              & content of the message                 &                         &                               \\
                                              & team where message was sent            &                         &                               \\
                                              & user the message belongs to            &                         &                               \\
         \midrule
-        \multirow{3}{*}{Availability status} & timestamp                              & \multirow{3}{*}{Server} & \multirow{3}{*}{RQ4}          \\
+        \multirow{3}{*}{Availability status} & timestamp                              & \multirow{3}{*}{Server} & \multirow{3}{*}{RQ3}          \\
                                              & selected availability status           &                         &                               \\
                                              & user who posted                        &                         &                               \\
         \midrule
-        \multirow{3}{*}{Direct call}         & start/end timestamp                    & \multirow{3}{*}{Server} & \multirow{3}{*}{RQ4}          \\
+        \multirow{3}{*}{Direct call}         & start/end timestamp                    & \multirow{3}{*}{Server} & \multirow{3}{*}{RQ3}          \\
                                              & participants                           &                         &                               \\
                                              & success: true or false                 &                         &                               \\
         \midrule
-        \multirow{3}{*}{Breakroom}           & team                                   & \multirow{3}{*}{Server} & \multirow{3}{*}{RQ4}          \\
+        \multirow{3}{*}{Breakroom}           & team                                   & \multirow{3}{*}{Server} & \multirow{3}{*}{RQ3}          \\
                                              & teamMembers                            &                         &                               \\
                                              & start/end timestamp                    &                         &                               \\
         \midrule
-        \multirow{4}{*}{Nudge}               & sending/receiving user                 & \multirow{4}{*}{Server} & \multirow{4}{*}{RQ4}          \\
+        \multirow{4}{*}{Nudge}               & sending/receiving user                 & \multirow{4}{*}{Server} & \multirow{4}{*}{RQ3}          \\
                                              & teamId                                 &                         &                               \\
                                              & start/end timestamp                    &                         &                               \\
                                              & ending user and type                   &                         &                               \\
         \midrule
-        \multirow{4}{*}{Random call}         & involved users                         & \multirow{4}{*}{Server} & \multirow{4}{*}{RQ4}          \\
+        \multirow{4}{*}{Random call}         & involved users                         & \multirow{4}{*}{Server} & \multirow{4}{*}{RQ3}          \\
                                              & teamId                                 &                         &                               \\
                                              & start/end timestamp                    &                         &                               \\
                                              & succes: true or false                  &                         &                               \\
         \midrule
-        \multirow{3}{*}{Mood}                & timestamp                              & \multirow{3}{*}{Server} & \multirow{3}{*}{RQ2, RQ4}     \\
+        \multirow{3}{*}{Mood}                & timestamp                              & \multirow{3}{*}{Server} & \multirow{3}{*}{RQ2, RQ3}     \\
                                              & selected mood                          &                         &                               \\
                                              & user who shared                        &                         &                               \\
         \midrule
         \multirow{2}{*}{Feedback}            & text content                   & \multirow{2}{*}{Server} & \multirow{2}{*}{-}            \\
                                              & user                                   &                         &                               \\
         \midrule
-        \multirow{4}{*}{Window action}       & opening timestamp                      & \multirow{4}{*}{Local}  & \multirow{4}{*}{RQ4    }      \\
+        \multirow{4}{*}{Window action}       & opening timestamp                      & \multirow{4}{*}{Local}  & \multirow{4}{*}{RQ3}      \\
                                              & minimizing timstamp                    &                         &                               \\
                                              & closing timestamp                      &                         &                               \\
                                              & restoring timstamp                     &                         &                               \\
 
         \midrule
-        \multirow{2}{*}{Application action}  & starting timestamp                     & \multirow{2}{*}{Local}  & \multirow{2}{*}{RQ4    }      \\
+        \multirow{2}{*}{Application action}  & starting timestamp                     & \multirow{2}{*}{Local}  & \multirow{2}{*}{RQ3    }      \\
                                              & quitting timestamp                     &                         &                               \\
 
         % \midrule
@@ -108,7 +108,7 @@ The team was happy to use AmbientTeams for a workweek (five days) instead of the
         % & destination team                       &                         &                               \\
 
         \midrule
-        \multirow{6}{*}{Active windows}      & title: e.g. 'Unicorns - Google Search' & \multirow{6}{*}{Local}  & \multirow{6}{*}{RQ3, RQ4}     \\
+        \multirow{6}{*}{Active windows}      & title: e.g. 'Unicorns - Google Search' & \multirow{6}{*}{Local}  & \multirow{6}{*}{RQ3}     \\
                                              & id: e.g. '5762'                        &                         &                               \\
                                              & bounds: x, y, height, width            &                         &                               \\
                                              & owner: owning process                  &                         &                               \\
